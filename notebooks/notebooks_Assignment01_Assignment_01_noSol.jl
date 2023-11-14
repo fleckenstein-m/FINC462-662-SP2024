@@ -120,7 +120,7 @@ md"""
 - To do this, go to the [Michael and Rosann Geltzeiler Trading Center](https://lerner.udel.edu/centers/lerner-college-trading-center/).
 - Go to a desktop with Bloomberg access. These are the computers equipped with keyboards looking like [this](https://assets.bbhub.io/image/v1/resize?type=auto&url=https%3A%2F%2Fassets.bbhub.io%2Fprofessional%2Fsites%2F10%2F2013Starboard_10023431_TV.jpg&width=800).
 - Double-click on the Bloomberg icon on the desktop. A log-in screen will appear. 
-- If you do not have a Bloomberg account yet, click on `Create a New Login` and follow the instructions..
+- If you do not have a Bloomberg account yet, click on `Create a New Login` and follow the instructions.
 """
 
 # ╔═╡ 05441a31-9cbe-4863-b91d-18999649520d
