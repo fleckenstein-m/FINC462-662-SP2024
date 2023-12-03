@@ -105,21 +105,7 @@ show_section_number = false
 # ╔═╡ 01a2336a-5c04-4d5a-bb0b-a9c704517dbf
 pages = [
 	(page = "/calendar/", title = "Calendar"),
-	(page = "/lect01/", title = "Lecture 01"),
-	(page = "/lect02/", title = "Lecture 02"),
-	(page = "/lect03/", title = "Lecture 03"),
-	(page = "/lect04/", title = "Lecture 04"),
-	(page = "/lect05/", title = "Lecture 05"),
-	(page = "/lect06/", title = "Lecture 06"),
-	(page = "/lect07/", title = "Lecture 07"),
-	(page = "/lect08/", title = "Lecture 08"),
-	(page = "/lect09/", title = "Lecture 09"),
-	(page = "/lect10/", title = "Lecture 10"),
-	(page = "/lect11/", title = "Lecture 11"),
-	(page = "/lect12/", title = "Lecture 12"),
-	(page = "/lect13/", title = "Lecture 13"),
-	(page = "/lect14/", title = "Lecture 14"),
-	(page = "/lect15/", title = "Lecture 15")
+	(page = "/lect01/", title = "Lecture 01")
 ]
 
 # ╔═╡ c0768146-5ea0-4736-94f8-2c1a2affa922
