@@ -16,7 +16,7 @@
 
 ---
 
-**Table of Contents:**
+**Table of Contents**
 
 \toc
 
@@ -44,7 +44,7 @@
 
 
 ## Canvas Page
-- FINC-462/662 [Link]()
+- FINC-462/662 [Link](https://udel.instructure.com/courses/1764073)
 
 
 ## Course Overview
@@ -69,7 +69,7 @@ After completing this course, students will
 
 
 ## Prerequisites
-FINC 311 (Principles of Finance) and 314 (Investments) are prerequisites. A good understanding of basic algebra, calculus, and statistics is key to mastering the material covered in this course. It will also be useful if you already have some familiarity with: Present Value, compounding of interest rates, the CAPM, Black-Scholes. If you are unfamiliar with these concepts, it will simply mean a little bit more work for you as we go through the associated topics in class. 
+FINC 311 (Principles of Finance) and 314 (Investments) are prerequisites. A good understanding of basic algebra, calculus, and statistics is key to mastering the material covered in this course. It will also be useful if you already have some familiarity with: Present Value, compounding of interest rates, the CAPM, and Black-Scholes. If you are unfamiliar with these concepts, it will simply mean a little bit more work for you as we go through the associated topics in class. 
 
 
 ## Course Syllabus
@@ -93,7 +93,7 @@ Additional resources are
 
 ## Grading Policy
 
-Your final grade is based on _i)_ two midterm exams, _ii)_ a final exam, and _iii)_ class participation. Grading is on a curve. This means that you will be ranked relative to all students in both sections based on your two midterms, the final exam, and quizzes. The weighting shown below under Final Grade Breakdown determines your final rank among all students enrolled in the sections I teach.
+Your final grade is based on _i)_ two midterm exams, _ii)_ a final exam, and _iii)_ class participation. Grading is on a curve. This means that you will be ranked relative to all students in both sections based on your two midterms, the final exam, and class participation. The weighting shown below under Final Grade Breakdown determines your final rank among all students enrolled in the sections.
 
 - 20% Class Participation
 - 25% Midterm 1
@@ -108,12 +108,8 @@ Your final grade is based on _i)_ two midterm exams, _ii)_ a final exam, and _ii
 2. Midterm 2
   - *April 18, 2024*
 3. Final Exam
-  
-| Section     | FINC 462-011     |
-| :--------   | :--------------- |
-| Date        | Set by Registrar |
-| Time        | Set by Registrar |
-| Location    | Set by Registrar |
+  - Date and Time set by Registrar's Office.  
+
 
 
 ## Assessment Component: Class Participation
