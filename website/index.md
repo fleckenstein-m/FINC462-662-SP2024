@@ -44,11 +44,7 @@
 
 
 ## Canvas Page
-- FINC-462/662 [Link](https://udel.instructure.com/courses/1764073)
-- FINC-462/662 [Link](https://udel.instructure.com/courses/1764073){:target="_blank"}
-
-<a href="https://udel.instructure.com/courses/1764073/" target="_blank">Canvas!</a>
-
+- FINC-462/662 [Link](https://external.ink?to=udel.instructure.com/courses/1764073)
 
 ## Course Overview
 
@@ -134,7 +130,7 @@ There will be two data assignments during the semester. These two assignments ar
 7. Spot Rates, Forward Rates, Expectations Hypothesis
 8. Forward Rate Agreements and Futures Contracts
 9. Interest Rate Swaps & Floating Rate Bonds
-10. Relative value trades the U.S. Treasury notes and Inflation Protected Securities (TIPS)
+10. Relative value trades between U.S. Treasury notes and Inflation Protected Securities (TIPS)
 
 
 ## License
@@ -142,7 +138,7 @@ There will be two data assignments during the semester. These two assignments ar
 The copyright notice to be included in any copies and other derivative work of this material is:
 
 ```
-Copyright 2023 Matthias Fleckenstein, University of Delaware, Lerner College of Business & Economics, mflecken@udel.edu
+Copyright 2024 Matthias Fleckenstein, University of Delaware, Lerner College of Business & Economics, mflecken@udel.edu
 ```
 
 ![](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png) This is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/)
