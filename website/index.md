@@ -45,6 +45,8 @@
 
 ## Canvas Page
 - FINC-462/662 [Link](https://udel.instructure.com/courses/1764073)
+- FINC-462/662 [Link](https://udel.instructure.com/courses/1764073){:target="_blank"}
+- <a href="https://udel.instructure.com/courses/1764073/" target="_blank">Canvas!</a>
 
 
 ## Course Overview
