@@ -5,7 +5,10 @@
 |:-------:|:------------------------------------------:|:-------------:|:-----------------------------------------------------------:|
 | 1       | Introduction                               | Feb 06, 2024   |  [Slides](/assets/lectures/lect01/Lect01.html)             |
 | 2       | The U.S. Treasury Market                   | Feb 08, 2024   |  [Slides](/assets/lectures/lect02/Lect02.html)             |
-| 3       | Price-Quoting Conventions in the U.S. Treasury Market  | Feb 13, 2024   |  [Slides](/assets/lectures/lect03/Lect03.html)             |
+| 3       | Price-Quoting Conventions in the U.S. Treasury Market (a) | Feb 13, 2024   |  [Slides](/assets/lectures/lect03/Lect03.html)             |
+| 4       | Price-Quoting Conventions in the U.S. Treasury Market (b) | Feb 15, 2024   |  [Slides](/assets/lectures/lect03/Lect03.html)             |
+| 5       | Bond Pricing Fundamentals                  | Feb 20, 2024   |  [Slides](/assets/lectures/lect04/Lect04.html)             |
+
 
 
 
