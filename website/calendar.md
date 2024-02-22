@@ -8,6 +8,7 @@
 | 3       | Price-Quoting Conventions in the U.S. Treasury Market (a) | Feb 13, 2024   |  [Slides](/assets/lectures/lect03/Lect03.html)             |
 | 4       | Price-Quoting Conventions in the U.S. Treasury Market (b) | Feb 15, 2024   |  [Slides](/assets/lectures/lect03/Lect03.html)             |
 | 5       | Bond Pricing Fundamentals                  | Feb 20, 2024   |  [Slides](/assets/lectures/lect04/Lect04.html)             |
+| 6       | Bond Pricing                               | Feb 22, 2024   | [Slides](/assets/lectures/lect05/Lect05.html)              |
 
 
 
@@ -17,4 +18,5 @@
 |         | Title                                      | Due Date          | Assignment                                              |
 |:-------:|:------------------------------------------:|:-----------------:|:-------------------------------------------------------:|
 | 1       | Assignment 1                               | Feb 13, 2024      | Assignment 01                                           |
-| 1       | Assignment 2                               | Feb 20, 2024      | Assignment 02                                           |
+| 2       | Assignment 2                               | Feb 20, 2024      | Assignment 02                                           |
+| 3       | Assignment 3                               | Feb 27, 2024      | Assignment 03                                           |
