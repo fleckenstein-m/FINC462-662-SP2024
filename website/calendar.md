@@ -9,6 +9,8 @@
 | 4       | Price-Quoting Conventions in the U.S. Treasury Market (b) | Feb 15, 2024   |  [Slides](/assets/lectures/lect03/Lect03.html)             |
 | 5       | Bond Pricing Fundamentals                  | Feb 20, 2024   |  [Slides](/assets/lectures/lect04/Lect04.html)             |
 | 6       | Bond Pricing                               | Feb 22, 2024   | [Slides](/assets/lectures/lect05/Lect05.html)              |
+| 7       | Bond Yields and Bond Pricing by Replication | Feb 27, 2024   | [Slides](/assets/lectures/lect06/Lect06.html)              |
+| 8       | Bond Yields and Bond Pricing by Replication | Feb 29, 2024   | [Slides](/assets/lectures/lect06/Lect06.html)              |
 
 
 
