@@ -11,6 +11,8 @@
 | 6       | Bond Pricing                               | Feb 22, 2024   | [Slides](/assets/lectures/lect05/Lect05.html)              |
 | 7       | Bond Yields and Bond Pricing by Replication | Feb 27, 2024   | [Slides](/assets/lectures/lect06/Lect06.html)              |
 | 8       | Bond Yields and Bond Pricing by Replication | Feb 29, 2024   | [Slides](/assets/lectures/lect06/Lect06.html)              |
+| 9       | Term Structure of Interest Rates            | Mar 12, 2024   | [Slides](/assets/lectures/lect06/Lect07_noSol.html)              |
+
 
 
 
