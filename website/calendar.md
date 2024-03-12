@@ -24,3 +24,4 @@
 | 1       | Assignment 1                               | Feb 13, 2024      | Assignment 01                                           |
 | 2       | Assignment 2                               | Feb 20, 2024      | Assignment 02                                           |
 | 3       | Assignment 3                               | Feb 27, 2024      | Assignment 03                                           |
+| 4       | Assignment 3                               | Feb 19, 2024      | Assignment 04                                           |

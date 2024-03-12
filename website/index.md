@@ -107,7 +107,8 @@ Your final grade is based on _i)_ two midterm exams, _ii)_ a final exam, and _ii
 2. Midterm 2
   - *April 18, 2024*
 3. Final Exam
-  - Date and Time set by Registrar's Office.  
+  - *May 19, 2024* 
+  - *2.00pm - 4.00pm in Memorial Hall 108*
 
 
 
