@@ -11,7 +11,8 @@
 | 6       | Bond Pricing                               | Feb 22, 2024   | [Slides](/assets/lectures/lect05/Lect05.html)              |
 | 7       | Bond Yields and Bond Pricing by Replication | Feb 27, 2024   | [Slides](/assets/lectures/lect06/Lect06.html)              |
 | 8       | Bond Yields and Bond Pricing by Replication | Feb 29, 2024   | [Slides](/assets/lectures/lect06/Lect06.html)              |
-| 9       | Term Structure of Interest Rates            | Mar 12, 2024   | [Slides](/assets/lectures/lect06/Lect07_noSol.html)              |
+| 9       | Term Structure of Interest Rates            | Mar 12, 2024   | [Slides](/assets/lectures/lect06/Lect07.html)              |
+| 10      | Term Structure of Interest Rates            | Mar 14, 2024   | [Slides](/assets/lectures/lect06/Lect07.html)              |
 
 
 
@@ -24,4 +25,5 @@
 | 1       | Assignment 1                               | Feb 13, 2024      | Assignment 01                                           |
 | 2       | Assignment 2                               | Feb 20, 2024      | Assignment 02                                           |
 | 3       | Assignment 3                               | Feb 27, 2024      | Assignment 03                                           |
-| 4       | Assignment 3                               | Feb 19, 2024      | Assignment 04                                           |
+| 4       | Assignment 4                               | Feb 19, 2024      | Assignment 04                                           |
+| 5       | Assignment 5                               | Mar 19, 2024      | Assignment 05                                           |
