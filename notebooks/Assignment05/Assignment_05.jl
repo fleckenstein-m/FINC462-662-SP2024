@@ -307,7 +307,7 @@ Foldable("Solution",Markdown.parse("
 ``\$ D(2.0) = \\frac{1}{\\left(1+\\frac{r_{2.0}}{2}\\right)^{2\\times 2.0}} = $(roundmult(D_3D,1e-4))\$`` 
 
 
-- Note: The yield curve implies that \$1 in 1.5 years is worth less than \$1 in 2 years. This is inconsistent with the general principles of the time value of money
+- Note: The yield curve implies that \$ 1 in 1.5 years is worth less than \$ 1 in 2 years. This is inconsistent with the general principles of the time value of money
 "))
 
 # ╔═╡ 24972917-ba7d-4a8e-9704-19220693b021
