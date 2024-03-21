@@ -265,49 +265,9 @@ C       | 97.327      | 5%                | 3 years
 # ╔═╡ 9510d176-a1e0-44b0-a584-08855d257e40
 vspace
 
-# ╔═╡ e1342341-a348-453c-894f-dfbe857eb4db
-vspace
-
-# ╔═╡ 1bae6b88-9b8c-42a7-8abe-981a46714219
-md"""
-## Exercise 4
-"""
-
-# ╔═╡ 2ef23d43-033b-4e3d-842b-36f6d7f3f91c
-# ╠═╡ show_logs = false
-begin
-	matVec8 = [1,2,3,4,5]
-	yVec8 = [1.25,1.5,2.25,3.25,4.75]
-	fVec8 = [100,100,100,100,100]
-	pVec8 = 100 ./ (1 .+ yVec8/100).^matVec8
-	nB8 = fVec8./100
-	MD8 = matVec8 ./ (1 .+ (yVec8./100) )
-	Pb8 = sum((nB8 .* pVec8))
-	wB8 = (nB8 .* pVec8) ./ Pb8
-	df8 = DataFrame(Bond=["H","I","J","K","L"],Maturity=matVec8,Yield=yVec8,FaceValue=fVec8,PricePer100=pVec8,nB=nB8, MD=MD8, Pb =Pb8, wb=wB8, wB_MD=wB8.*MD8)
-	display("")
-end
-
-# ╔═╡ b22ded79-21d4-460f-a5d0-7951957473af
-Markdown.parse("
-- Suppose you own a portfolio of __zero-coupon bonds__. All yields are __annually__ compounded. Calculate the modified duration of the bond portfolio given in the table below.
-
-Bond   |  Maturity     | Yield          | Face value 
-:------|:--------------|:---------------|:-------------
-H      | $(matVec8[1]) | $(yVec8[1])%   | $(fVec8[1])
-I      | $(matVec8[2]) | $(yVec8[2])%   | $(fVec8[2])
-J      | $(matVec8[3]) | $(yVec8[3])%   | $(fVec8[3])
-K      | $(matVec8[4]) | $(yVec8[4])%   | $(fVec8[4])
-L      | $(matVec8[5]) | $(yVec8[5])%   | $(fVec8[5])
-
-")
-
-# ╔═╡ f6668627-a8c2-4752-9187-9b9647af7d47
-vspace
-
 # ╔═╡ c7d4ecf0-d78d-4666-a07f-380c3265c96a
 md"""
-## Exercise 5
+## Exercise 4
 """
 
 # ╔═╡ 19c41dd1-0155-4aa1-88ba-2cb4c4e35595
@@ -321,7 +281,7 @@ Suppose that the term structure of interest rates is:
 Interest rates are annual interest rates that are __semi-annually__ compounded.
 1. Calculate the price and modified duration of a 1-year bond with a 6% coupon rate, with coupons paid semi-annually. The bond has a face value of $100.
 2. Calculate the price and modified duration of a 2-year bond with a 10% coupon rate, with coupons paid semi-annually. The bond has a face value of $100.
-3. Calculate the modified duration of a portfolio that consists of one unit each of the bonds in part 1 and part 2 above.
+3. Compare your results from 1 and 2 above. Which bond is  more sensitive to changes in interest rates? 
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -818,11 +778,6 @@ version = "17.4.0+2"
 # ╟─bdfc509c-1288-45ff-8dd2-15f9f31511b8
 # ╟─6afec959-4488-4a7e-99e9-186057053197
 # ╟─9510d176-a1e0-44b0-a584-08855d257e40
-# ╟─e1342341-a348-453c-894f-dfbe857eb4db
-# ╟─1bae6b88-9b8c-42a7-8abe-981a46714219
-# ╟─b22ded79-21d4-460f-a5d0-7951957473af
-# ╟─2ef23d43-033b-4e3d-842b-36f6d7f3f91c
-# ╟─f6668627-a8c2-4752-9187-9b9647af7d47
 # ╟─c7d4ecf0-d78d-4666-a07f-380c3265c96a
 # ╟─19c41dd1-0155-4aa1-88ba-2cb4c4e35595
 # ╟─9dba51e3-0738-40a1-96d8-f5583cdc5729
