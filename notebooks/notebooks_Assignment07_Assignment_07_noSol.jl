@@ -17,8 +17,8 @@ begin
 	<p style="padding-bottom:1cm"> </p>
 	<div align=center style="font-size:25px; font-family:family:Georgia"> FINC-462/662: Fixed Income Securities </div>
 	<p style="padding-bottom:1cm"> </p>
-	<p align=center style="font-size:25px; font-family:family:Georgia"> <b> Assignment 6</b> <p>
-	<p align=center style="font-size:25px; font-family:family:Georgia"> <b> Bond Duration</b> <p>
+	<p align=center style="font-size:25px; font-family:family:Georgia"> <b> Assignment 7</b> <p>
+	<p align=center style="font-size:25px; font-family:family:Georgia"> <b> Bond Convexity</b> <p>
 	<p style="padding-bottom:1cm"> </p>
 	<p align=center style="font-size:25px; font-family:family:Georgia"> Spring 2024 <p>
 	<p style="padding-bottom:0.5cm"> </p>
@@ -60,292 +60,126 @@ begin
 	display("")
 end
 
-# ╔═╡ 36e6512e-a077-48ad-8fe8-70a1bd1bed93
+# ╔═╡ faa98402-e6d6-4a24-83ee-e8af7228103b
 md"""
 ## Exercise 1
 """
 
-# ╔═╡ 982fa9ef-7fdf-4697-a39e-e48ac2ac7ae5
+# ╔═╡ d8dd4d39-a980-46dd-bbcb-90a47faa937a
+# ╠═╡ show_logs = false
+begin
+	F2 = 100
+	c2 = 8
+	y2 = 6
+	T2 = 10
+	C2 = c2/200*F2
+	dt2vec = 0.5:0.5:T2
+	deltaY2 = 0.2
+	y2plus  = y2 + deltaY2
+	y2minus = y2 - deltaY2
+	C2Vec = C2 .* ones(length(dt2vec))
+	C2Vec[end]=F2+C2
+	PV2Vec = C2Vec ./ (1 .+ y2/200 ).^(2 .* dt2vec)
+	P2 = sum(PV2Vec)
+
+	PV2Vecplus = C2Vec ./ (1 .+ y2plus/200 ).^(2 .* dt2vec)
+	P2plus = sum(PV2Vecplus)
+	PV2Vecminus = C2Vec ./ (1 .+ y2minus/200 ).^(2 .* dt2vec)
+	P2minus = sum(PV2Vecminus)
+	MD2 = -(P2plus-P2minus)/(2*deltaY2/100*P2)
+	CX2 = (P2plus + P2minus - 2*P2)/(deltaY2/100)^2*1/P2
+	display("")
+end
+
+# ╔═╡ be8f75cd-bb9b-41e7-881b-011ca9432bd7
 Markdown.parse("
-- Calculate the Macaulay Duration **and** the Modified Duration of a Treasury bond with maturity in $(T3) years, coupon rate of $(c3) percent, and face value of \$ $(F3). Suppose the Treasury's yield to maturity is $(y3) percent.
-  - You can use Excel to calculate the Macaulay Duration.
+- Consider a coupon bond with time-to-maturity ``T=$T2`` years, face value ``F=$F2``, coupon rate ``c=$c2``%, __semi-annual__ coupon cash flows of ``C=$C2`` and yield-to-maturity ``y=$y2``%.
+- Calculate the convexity and the modified duration of this bond using the convexity and modified duration approximation formulas with ``\\Delta y=$deltaY2``%.
+- What is the price changes of the bond (in percentage terms) when bond yields increase by 50 basis points?
 ")
 
-# ╔═╡ ce1e6bc3-3e22-4163-9c1f-f91976954376
-# ╠═╡ show_logs = false
-begin
- F3 = 100
- c3 = 2
- y3 = 3
- T3 = 3
- dt3 = collect(0.5:0.5:T3)
- C3 = c3/200*F3	
- C3vec = C3.*ones(length(dt3))
- C3vec[end] = F3 + C3	
- PV3 = getBondPrice(y3,c3,T3,F3)
-
- D = 0
- w3 = zeros(length(dt3))
- PVC3vec= zeros(length(dt3))	
- for idx=1:length(dt3)
-	global w3[idx] = (C3vec[idx]/(1+y3/200)^(2*dt3[idx]))/PV3
-	global PVC3vec[idx] = (C3vec[idx]/(1+y3/200)^(2*dt3[idx]))
-	global D += dt3[idx] * w3[idx]
- end
-
- MD = D/(1+y3/200)
- display("")
-end
-
-# ╔═╡ dda3cea8-ff3c-45f3-93e9-207bf63f25aa
-# ╠═╡ show_logs = false
-begin
-	str31 = L"D=%$(dt3[1]) \times \frac{\frac{C}{(1+\frac{y}{2})^{2\times %$(dt3[1])}}}{P} + "
-	 for idx=2:length(dt3)
-		 if idx==length(dt3)
-			tmpStr = L"%$(dt3[idx]) \times \frac{\frac{100+C}{(1+\frac{y}{2})^{2\times %$(dt3[idx])}}}{P}"
-			global str31 = str31[1:end-1] * tmpStr[2:end]	 
-		 else
-		 tmpStr = L"%$(dt3[idx]) \times \frac{\frac{C}{(1+\frac{y}{2})^{2\times %$(dt3[idx])}}}{P} + "
-		global str31 = str31[1:end-1] * tmpStr[2:end]
-		 end
-	 end
-	
-	 str32 = L"D=%$(dt3[1]) \times \frac{\frac{%$(C3)}{(1+\frac{%$(y3)\%}{2})^{2\times %$(dt3[1])}}}{%$(roundmult(PV3,1e-4))} + "
-	 for idx=2:length(dt3)
-		 if idx==length(dt3)
-			tmpStr = L"%$(dt3[idx]) \times \frac{\frac{%$(F3+C3)}{(1+\frac{%$(y3)\%}{2})^{2\times %$(dt3[idx])}}}{%$(roundmult(PV3,1e-4))}"
-			global str32 = str32[1:end-1] * tmpStr[2:end]	 
-		 else
-		 tmpStr = L"%$(dt3[idx]) \times \frac{\frac{%$(C3)}{(1+\frac{%$(y3)\%}{2})^{2\times %$(dt3[idx])}}}{%$(roundmult(PV3,1e-4))} + "
-		global str32 = str32[1:end-1] * tmpStr[2:end]
-		 end
-	 end
-	str33 = L"D = %$(roundmult(D,1e-4)) \textrm{ years}"
-	
-		df3 = DataFrame(Time=dt3, Coupon=C3vec, PVCoupon=PVC3vec,  P=PV3.*ones(length(dt3)),Wt=w3,t_times_Wt=dt3.*w3 )
-			
-		display("")
-end
-
-# ╔═╡ dbffdff4-ffbd-4111-a0a3-8805e2e489ce
-Foldable("Solution",Markdown.parse("
-- Using the Macaulay Duration formula, we calculate ``D`` as follows
-``$str31 ``
-- Plugging in the values
-``$str32 ``
-- Finally, the Macaulay Duration ``D`` is
-``$str33``
-- The Modified Duration is
-``\$MD = \\frac{D}{(1+\\frac{y}{2})} = \\frac{$(roundmult(D,1e-4))}{1+\\frac{$(roundmult(y3/100,1e-3))}{2}} = $(roundmult(MD,1e-4))\$``
-
-"))
-
-# ╔═╡ 02ae383b-c437-47c8-97c1-786130a43adb
+# ╔═╡ b92f0179-d96c-499d-b98d-5a574ee5cfaf
 vspace
 
-# ╔═╡ e1f618e8-9ad0-436e-b43c-9cbd8e6b5f60
+# ╔═╡ 5ed25d13-c20d-492b-8b85-0b49a2762019
 md"""
 ## Exercise 2
 """
 
-# ╔═╡ 354d2f11-01c8-4d2e-ba6d-c18853018ce7
-Markdown.parse("
-- Calculate the Modified Duration of a Treasury bond with maturity in $(T5) years, coupon rate of $(c5) percent, and face value of \$ $(F5). Suppose the Treasury's yield to maturity is $(y5) percent. 
-  - _To calculate the modified duration, use the approximation formula from class with ``\\Delta y=$deltaY5``% (20 basis points)._
-- Compare your results from Exercise 1 and Exercise 2.
-- What is percentage change in the price of this bond for a 100 basis point change in the bond's yield?
-")
-
-# ╔═╡ 1591fc11-7174-46a8-95d0-0ff9e1ce2424
+# ╔═╡ 908377a9-3767-4b65-865d-ec69b7ff349b
 # ╠═╡ show_logs = false
 begin
- F5 = 100
- c5 = 2
- y5 = 3
- T5 = 3
- C5=c5/200*F5
- deltaY5 = 0.20 #percent
- p5 = getBondPrice(y5,c5,T5,F5)
- p5plus	= getBondPrice(y5+deltaY5,c5,T5,F5)
- p5minus = getBondPrice(y5-deltaY5,c5,T5,F5)
- md5 = - (p5plus-p5minus)/(2*(deltaY5/100)*p5)
- display("")
+	matVec4 = [1,2,3,4,5]
+	yVec4 = [2,3,5,6,8]
+	fVec4 = [150,100,200,100,50]
+	pVec4 = 100 ./ (1 .+ yVec4/100).^matVec4
+	nB4 = fVec4./100
+	MD4 = matVec4 ./ (1 .+ (yVec4./100) )
+	CX4 = (matVec4.^2 .+ matVec4) ./ (1 .+ (yVec4./100) ).^2
+	Pb4 = sum((nB4 .* pVec4))
+	wB4 = (nB4 .* pVec4) ./ Pb4
+	df4 = DataFrame(Bond=["H","I","J","K","L"],Maturity=matVec4,Yield=yVec4,TotalParAmount=fVec4,Pb=pVec4,nB=nB4, CX=CX4, Pp =Pb4, wb=wB4, wB_CX=wB4.*CX4)
+	display("")
 end
 
-# ╔═╡ d3cd8fc8-a3cc-4a42-a8e0-73c06752ddf3
-Foldable("Solution",Markdown.parse("
+# ╔═╡ 39131b82-0d76-4e3c-bb5f-64701697599d
+Markdown.parse("
+- Suppose that you own a portfolio of zero-coupon bonds. All yields are __annually__ compounded. 
+- Calculate the convexity of the portfolio.
 
-- We pick ``\\Delta y=$deltaY5``% (20 basis points).
-1. We calculate ``P(y+\\Delta y)``
- ``\$P(y+\\Delta y)= \\frac{C}{(y+\\Delta y)/2} \\times \\left( 1-\\frac{1}{\\left(1+\\frac{(y+\\Delta y)}{2}\\right)^{2\\times T}} \\right) + \\frac{100}{\\left(1+\\frac{(y+\\Delta y)}{2}\\right)^{2\\times T}}\$``
+Bond   |  Maturity     | Yield        | Total Par Amount
+:------|:--------------|:-------------|:-------------
+H      | $(matVec4[1]) | $(yVec4[1])% | $(fVec4[1])
+I      | $(matVec4[2]) | $(yVec4[2])% | $(fVec4[2])
+J      | $(matVec4[3]) | $(yVec4[3])% | $(fVec4[3])
+K      | $(matVec4[4]) | $(yVec4[4])% | $(fVec4[4])
+L      | $(matVec4[5]) | $(yVec4[5])% | $(fVec4[5])
 
-``\$P(y+\\Delta y)= \\frac{$C5}{$(y3+deltaY5)\\%/2} \\times \\left( 1-\\frac{1}{\\left(1+\\frac{$(y5+deltaY5)\\%}{2}\\right)^{2\\times $T5}} \\right) + \\frac{100}{\\left(1+\\frac{$(y5+deltaY5)\\%}{2}\\right)^{2\\times $T5}}=$(roundmult(p5plus,1e-6))\$``
+")
 
-2. We calculate ``P(y-\\Delta y)``
- ``\$P(y-\\Delta y)= \\frac{C}{(y-\\Delta y)/2} \\times \\left( 1-\\frac{1}{\\left(1+\\frac{(y-\\Delta y)}{2}\\right)^{2\\times T}} \\right) + \\frac{100}{\\left(1+\\frac{(y-\\Delta y)}{2}\\right)^{2\\times T}}\$``
-
-``\$P(y+\\Delta y)= \\frac{$C5}{$(y5-deltaY5)\\%/2} \\times \\left( 1-\\frac{1}{\\left(1+\\frac{$(y5-deltaY5)\\%}{2}\\right)^{2\\times $T5}} \\right) + \\frac{100}{\\left(1+\\frac{$(y5-deltaY5)\\%}{2}\\right)^{2\\times $T5}} =$(roundmult(p5minus,1e-6))\$``
-
-3. We calculate the modified duration ``MD(y)``
-``\$MD(y) = - \\frac{P(y+\\Delta y)-P(y-\\Delta y)}{2\\times \\Delta y} \\times \\frac{1}{P(y)}\$``
-
-``\$MD($y5\\%) = - \\frac{$(roundmult(p5plus,1e-4))-$(roundmult(p5minus,1e-4))}{2\\times $(deltaY5/100)} \\times \\frac{1}{$(roundmult(p5,1e-4))}=$(roundmult(md5,1e-6))\$``
-
-- This means that when interest rates increase by 1 percentage point, the price of the bond declines by $(roundmult(md5,1e-2)) percent.
-
-"))
-
-# ╔═╡ ef4da0da-1905-4c7e-bacc-3d782920100b
+# ╔═╡ 4359839b-c167-4e1a-b26c-7ad0a49b157d
 vspace
 
-# ╔═╡ bdfc509c-1288-45ff-8dd2-15f9f31511b8
+# ╔═╡ 30f3c798-7cbb-4889-87c4-5efad40837c4
 md"""
 ## Exercise 3
 """
 
-# ╔═╡ 6afec959-4488-4a7e-99e9-186057053197
+# ╔═╡ 6f68f07f-4bef-4de8-ad9a-f5fb1ae99398
 md"""
-Which bond will most likely experience the smallest percent change in price if the yields for all three bonds increase by 100 bps?
+- Suppose you are analyzing a bond with 10 years to maturity, \$1000 face value, and a coupon rate of 5% (paid semi-annually). The bond's yield to maturity is 6%.
 
-Bond    |    Price    |    Coupon Rate    | Time-to-Maturity $T$
-:-------|:------------|:------------------|:-----------------------
-A       | 101.886     | 5%                | 2 years   
-B       | 100.000     | 6%                | 2 years   
-C       | 97.327      | 5%                | 3 years   
+1. Calculate the price of the bond.
+2. Calculate the bond’s modified duration using the approximation formula with $\Delta y = 0.1$%.
+3. Calculate the bond’s convexity using the approximation formula with $\Delta y = 0.1$%.
+4. If discount rates increase to 10%, what is the new price of the bond?
 """
-
-# ╔═╡ 9510d176-a1e0-44b0-a584-08855d257e40
-vspace
-
-# ╔═╡ 2163ac0a-301f-455d-bc07-8fa2873aa59f
-Foldable("Solution",
-md"""
-- Bond C, which has the longest maturity, is likely to have the largest modified  duration, so is not the answer.
-- Bonds A and B have the same maturity, but B has higher coupons, so B should have a lower modified duration than Bond A.
-- Thus, B is likely to have a lower modified duration than A and the answer is Bond B.
-""")
-
-# ╔═╡ e1342341-a348-453c-894f-dfbe857eb4db
-vspace
-
-# ╔═╡ c7d4ecf0-d78d-4666-a07f-380c3265c96a
-md"""
-## Exercise 4
-"""
-
-# ╔═╡ 19c41dd1-0155-4aa1-88ba-2cb4c4e35595
-md"""
-Suppose that the term structure of interest rates is:
-
-| t | 0.5   | 1      |   1.5   | 2     |
-|:--|:------|:-------|:---------|:-----|
-| r | 1%    | 1.2%   |   1.4%  | 1.8%  |
-
-Interest rates are annual interest rates that are __semi-annually__ compounded.
-1. Calculate the price and modified duration of a 1-year bond with a 6% coupon rate, with coupons paid semi-annually. The bond has a face value of $100.
-2. Calculate the price and modified duration of a 2-year bond with a 10% coupon rate, with coupons paid semi-annually. The bond has a face value of $100.
-3. Calculate the modified duration of a portfolio that consists of one unit each of the bonds in part 1 and part 2 above.
-"""
-
-# ╔═╡ 6ebbd3a5-5c68-494b-8c56-82d958d8bee8
-vspace
-
-# ╔═╡ 2ec3879c-2220-4ba5-aea9-6bf4ad6a5c29
-Foldable("Solution to Part 1",Markdown.parse("
-We use \$\\Delta y = 0.1\\%\$ (10 basis points).
-
-\$\\begin{aligned}
-&P(y) = \\frac{3}{(1+\\frac{1\\%}{2})^{2\\times 0.5}} + \\frac{103}{(1+\\frac{1.2\\%}{2})^{2\\times 1.0}} = 104.76\\\\
-&P(y + \\Delta y) = \\frac{3}{(1+\\frac{1.1\\%}{2})^{2\\times 0.5}} + \\frac{103}{(1+\\frac{1.3\\%}{2})^{2\\times 1.0}}= 104.6575\\\\
-&P(y - \\Delta y) = \\frac{3}{(1+\\frac{0.9\\%}{2})^{2\\times 0.5}} + \\frac{103}{(1+\\frac{1.1\\%}{2})^{2\\times 1.0}}= 104.8528\\\\
-&MD \\approx -\\frac{104.6575 - 104.8628}{2\\times .001}\\times\\frac{1}{104.76} = 0.9784
-\\end{aligned}\$
-"))
-
-# ╔═╡ c8580960-58ca-4324-9593-57db48ccdc1e
-Foldable("Solution to Part 2",Markdown.parse("
-We use \$\\Delta y = 0.1\\%\$ (10 basis points).
-
-\$\\begin{aligned}
-&P(y) = \\frac{5}{(1+\\frac{1\\%}{2})^{2\\times 0.5}} + \\frac{5}{(1+\\frac{1.2\\%}{2})^{2\\times 1.0}} + 
-\\frac{5}{(1+\\frac{1.4\\%}{2})^{2\\times 1.5}} + \\frac{105}{(1+\\frac{1.8\\%}{2})^{2\\times 2.0}} = 116.12\\\\
-
-&P(y+\\Delta y) = \\frac{5}{(1+\\frac{1.1\\%}{2})^{2\\times 0.5}} + \\frac{5}{(1+\\frac{1.3\\%}{2})^{2\\times 1.0}} + 
-\\frac{5}{(1+\\frac{1.5\\%}{2})^{2\\times 1.5}} + \\frac{105}{(1+\\frac{1.9\\%}{2})^{2\\times 2.0}} = 115.9004\\\\
-&P(y-\\Delta y) = \\frac{5}{(1+\\frac{0.9\\%}{2})^{2\\times 0.5}} + \\frac{5}{(1+\\frac{1.1\\%}{2})^{2\\times 1.0}} + 
-\\frac{5}{(1+\\frac{1.3\\%}{2})^{2\\times 1.5}} + \\frac{105}{(1+\\frac{1.7\\%}{2})^{2\\times 2.0}} = 116.3314
-\\\\
-&MD \\approx -\\frac{115.9004 - 116.3314}{2\\times .001}\\times\\frac{1}{116.12} = 1.8558
-\\end{aligned}\$
-
-
-"))
-
-# ╔═╡ 2c63c47c-307a-4844-8cf2-9c44982ac5cd
-Foldable("Solution to Part 3",Markdown.parse("
-\$\\begin{aligned}
-&w_{1yr} = \\frac{104.76}{104.76+116.12} = 0.4743\\\\
-&w_{2yr} = \\frac{116.12}{104.76+116.12} = 0.5257\\\\
-&MD = 0.4743\\times(0.9784) + 0.5257\\times(1.8558) = 1.44
-\\end{aligned}\$
-"))
-
-# ╔═╡ 0008a21c-49dc-4ee0-bc27-ca100e599278
-vspace
-
-# ╔═╡ 1bae6b88-9b8c-42a7-8abe-981a46714219
-md"""
-## Exercise 5
-"""
-
-# ╔═╡ b22ded79-21d4-460f-a5d0-7951957473af
-Markdown.parse("
-- Suppose you own a portfolio of __zero-coupon bonds__. All yields are __annually__ compounded. Calculate the modified duration of the bond portfolio given in the table below.
-
-Bond   |  Maturity     | Yield          | Face value 
-:------|:--------------|:---------------|:-------------
-H      | $(matVec8[1]) | $(yVec8[1])%   | $(fVec8[1])
-I      | $(matVec8[2]) | $(yVec8[2])%   | $(fVec8[2])
-J      | $(matVec8[3]) | $(yVec8[3])%   | $(fVec8[3])
-K      | $(matVec8[4]) | $(yVec8[4])%   | $(fVec8[4])
-L      | $(matVec8[5]) | $(yVec8[5])%   | $(fVec8[5])
-
-")
-
-# ╔═╡ 2ef23d43-033b-4e3d-842b-36f6d7f3f91c
-# ╠═╡ show_logs = false
-begin
-	matVec8 = [1,2,3,4,5]
-	yVec8 = [1.25,1.5,2.25,3.25,4.75]
-	fVec8 = [100,100,100,100,100]
-	pVec8 = 100 ./ (1 .+ yVec8/100).^matVec8
-	nB8 = fVec8./100
-	MD8 = matVec8 ./ (1 .+ (yVec8./100) )
-	Pb8 = sum((nB8 .* pVec8))
-	wB8 = (nB8 .* pVec8) ./ Pb8
-	df8 = DataFrame(Bond=["H","I","J","K","L"],Maturity=matVec8,Yield=yVec8,FaceValue=fVec8,PricePer100=pVec8,nB=nB8, MD=MD8, Pb =Pb8, wb=wB8, wB_MD=wB8.*MD8)
-	display("")
-end
-
-# ╔═╡ 5a5cfed2-6017-4a05-9f3f-b93d0bdc81a2
-md"""
-**Solution**
-"""
-
-# ╔═╡ b01e826e-acc1-4684-a2d1-fdb53946cdf3
-df8[:,1:10]
-
-# ╔═╡ e52b3706-8bc7-49aa-b154-0aca6560d8ac
-Markdown.parse("
-``\$MD_{\\textrm{Portfolio}} = $(roundmult(df8.wB_MD[1],1e-4)) + $(roundmult(df8.wB_MD[2],1e-4)) + $(roundmult(df8.wB_MD[3],1e-4)) + $(roundmult(df8.wB_MD[4],1e-4)) + $(roundmult(df8.wB_MD[5],1e-4))\$``
-
-``\$MD_{\\textrm{Portfolio}} = $(roundmult(sum(df8.wB_MD),1e-6))\$``
-")
-
 
 # ╔═╡ 7fa2dc91-127d-43e9-a2ed-d7b36d27ce1e
 vspace
+
+# ╔═╡ aee736ee-b621-4cf8-ae76-b46f1f0a91cc
+md"""
+## Exercise 4
+- For this question, use the spreadsheet `Assignment_07_Bloomberg_noSol.xlsx` available on Canvas.
+- Go to the Geltzeiler Trading Center. Open a Bloomberg terminal and enter `LUATTRUU Index`. In the search results, click on `LUATTRUU Index`.
+- Next, open the security description page by typing `DES` followed by `Enter`.
+
+1. __Give a brief description of the bond index (include this in your submission).__
+2. Next, open the spreadsheet `Assignment_07_Bloomberg.xlsx` on the same computer in Excel. 
+   + Important: Make sure that when you open Excel, there is a `Bloomberg` tab at the top. Otherwise, the data download fails.
+3. In the spreadsheet, enter into the highlighted box `Enter the Index Name here =>` the name of the bond index, i.e., `LUATTRUU Index`. This will download the market value of the index, the yield of the bond index, the modified duration and the convexity of the index.
+    + Column B is the market value of the index.
+    + Column C is the yield of the index.
+    + Column D is the modified duration of the index.
+    + Column E is the convexity of the index.
+4. Save the Excel spreadsheet.
+5. Next, for each date between January 5, 2016 to March 22, 2024, calculate the (approximate) loss in percentage points _and_ the dollar loss that the bond index would suffer if yields were to increase by 75 basis points (instantaneously). Do your calculation using 
+   + the modified duration of the index _only_, and 
+   + using _both_ the modified duration and the convexity of the index.
+6. Make a line plot of the dollar loss over the period from January 5, 2016 to March 22, 2024. What is the maximum dollar loss the index would suffer over this period? Use the dollar loss calculated using both modified duration and convexity from 5. above to answer this question. __Only include the plot and your answer for the maximum dollar loss in your submission.__
+
+"""
 
 # ╔═╡ 9dba51e3-0738-40a1-96d8-f5583cdc5729
 # ╠═╡ show_logs = false
@@ -913,36 +747,18 @@ version = "17.4.0+2"
 # ╟─8bcc8106-31e8-4212-8f9e-8800e5737b11
 # ╟─657e8ee4-5df9-42c1-8639-ba5ab37b51b4
 # ╟─a3e50f79-9370-4068-8384-5841c3ba8f3d
-# ╟─36e6512e-a077-48ad-8fe8-70a1bd1bed93
-# ╟─982fa9ef-7fdf-4697-a39e-e48ac2ac7ae5
-# ╟─ce1e6bc3-3e22-4163-9c1f-f91976954376
-# ╟─dda3cea8-ff3c-45f3-93e9-207bf63f25aa
-# ╟─dbffdff4-ffbd-4111-a0a3-8805e2e489ce
-# ╟─02ae383b-c437-47c8-97c1-786130a43adb
-# ╟─e1f618e8-9ad0-436e-b43c-9cbd8e6b5f60
-# ╟─354d2f11-01c8-4d2e-ba6d-c18853018ce7
-# ╟─1591fc11-7174-46a8-95d0-0ff9e1ce2424
-# ╟─d3cd8fc8-a3cc-4a42-a8e0-73c06752ddf3
-# ╟─ef4da0da-1905-4c7e-bacc-3d782920100b
-# ╟─bdfc509c-1288-45ff-8dd2-15f9f31511b8
-# ╟─6afec959-4488-4a7e-99e9-186057053197
-# ╟─9510d176-a1e0-44b0-a584-08855d257e40
-# ╟─2163ac0a-301f-455d-bc07-8fa2873aa59f
-# ╟─e1342341-a348-453c-894f-dfbe857eb4db
-# ╟─c7d4ecf0-d78d-4666-a07f-380c3265c96a
-# ╟─19c41dd1-0155-4aa1-88ba-2cb4c4e35595
-# ╟─6ebbd3a5-5c68-494b-8c56-82d958d8bee8
-# ╟─2ec3879c-2220-4ba5-aea9-6bf4ad6a5c29
-# ╟─c8580960-58ca-4324-9593-57db48ccdc1e
-# ╟─2c63c47c-307a-4844-8cf2-9c44982ac5cd
-# ╟─0008a21c-49dc-4ee0-bc27-ca100e599278
-# ╟─1bae6b88-9b8c-42a7-8abe-981a46714219
-# ╟─b22ded79-21d4-460f-a5d0-7951957473af
-# ╟─2ef23d43-033b-4e3d-842b-36f6d7f3f91c
-# ╟─5a5cfed2-6017-4a05-9f3f-b93d0bdc81a2
-# ╟─b01e826e-acc1-4684-a2d1-fdb53946cdf3
-# ╟─e52b3706-8bc7-49aa-b154-0aca6560d8ac
+# ╟─faa98402-e6d6-4a24-83ee-e8af7228103b
+# ╟─d8dd4d39-a980-46dd-bbcb-90a47faa937a
+# ╟─be8f75cd-bb9b-41e7-881b-011ca9432bd7
+# ╟─b92f0179-d96c-499d-b98d-5a574ee5cfaf
+# ╟─5ed25d13-c20d-492b-8b85-0b49a2762019
+# ╟─908377a9-3767-4b65-865d-ec69b7ff349b
+# ╟─39131b82-0d76-4e3c-bb5f-64701697599d
+# ╟─4359839b-c167-4e1a-b26c-7ad0a49b157d
+# ╟─30f3c798-7cbb-4889-87c4-5efad40837c4
+# ╟─6f68f07f-4bef-4de8-ad9a-f5fb1ae99398
 # ╟─7fa2dc91-127d-43e9-a2ed-d7b36d27ce1e
+# ╟─aee736ee-b621-4cf8-ae76-b46f1f0a91cc
 # ╟─9dba51e3-0738-40a1-96d8-f5583cdc5729
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
