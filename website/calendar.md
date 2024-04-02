@@ -15,6 +15,8 @@
 | 10      | Term Structure of Interest Rates            | Mar 14, 2024   | [Slides](/assets/lectures/lect07/Lect07.html)              |
 | 11      | Measures of Bond Price Volatility           | Mar 19, 2024   | [Slides](/assets/lectures/lect08/Lect08.html)              |
 | 12      | Measures of Bond Price Volatility           | Mar 21, 2024   | [Slides](/assets/lectures/lect08/Lect08.html)              |
+| 13      | Measures of Bond Price Volatility - Convexity | Apr 02, 2024   | [Slides](/assets/lectures/lect09/Lect09.html)              |
+| 14      | Measures of Bond Price Volatility - Convexity | Apr 04, 2024   | [Slides](/assets/lectures/lect10/Lect09.html)              |
 
 
 
@@ -30,3 +32,4 @@
 | 4       | Assignment 4                               | Feb 19, 2024      | Assignment 04                                           |
 | 5       | Assignment 5                               | Mar 19, 2024      | Assignment 05                                           |
 | 6       | Assignment 6                               | Apr 02, 2024      | Assignment 06                                           |
+| 6       | Assignment 7                               | Apr 09, 2024      | Assignment 07                                           |
