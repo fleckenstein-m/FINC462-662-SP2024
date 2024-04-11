@@ -17,7 +17,8 @@
 | 12      | Measures of Bond Price Volatility           | Mar 21, 2024   | [Slides](/assets/lectures/lect08/Lect08.html)              |
 | 13      | Measures of Bond Price Volatility - Convexity | Apr 02, 2024   | [Slides](/assets/lectures/lect09/Lect09.html)              |
 | 14      | Measures of Bond Price Volatility - Convexity | Apr 04, 2024   | [Slides](/assets/lectures/lect09/Lect09.html)              |
-| 14      | Hedging Interest Rate Risk                  | Apr 09, 2024   | [Slides](/assets/lectures/lect10/Lect10.html)              |
+| 15      | Hedging Interest Rate Risk                  | Apr 09, 2024   | [Slides](/assets/lectures/lect10/Lect10.html)              |
+| 16      | Hedging Interest Rate Risk                  | Apr 119, 2024   | [Slides](/assets/lectures/lect10/Lect10.html)              |
 
 
 
@@ -33,4 +34,5 @@
 | 4       | Assignment 4                               | Feb 19, 2024      | Assignment 04                                           |
 | 5       | Assignment 5                               | Mar 19, 2024      | Assignment 05                                           |
 | 6       | Assignment 6                               | Apr 02, 2024      | Assignment 06                                           |
-| 6       | Assignment 7                               | Apr 09, 2024      | Assignment 07                                           |
+| 7       | Assignment 7                               | Apr 09, 2024      | Assignment 07                                           |
+| 8       | Assignment 8                               | Apr 11, 2024      | Assignment 08                                           |
