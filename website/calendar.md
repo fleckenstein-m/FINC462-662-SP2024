@@ -18,7 +18,10 @@
 | 13      | Measures of Bond Price Volatility - Convexity | Apr 02, 2024   | [Slides](/assets/lectures/lect09/Lect09.html)              |
 | 14      | Measures of Bond Price Volatility - Convexity | Apr 04, 2024   | [Slides](/assets/lectures/lect09/Lect09.html)              |
 | 15      | Hedging Interest Rate Risk                  | Apr 09, 2024   | [Slides](/assets/lectures/lect10/Lect10.html)              |
-| 16      | Hedging Interest Rate Risk                  | Apr 119, 2024   | [Slides](/assets/lectures/lect10/Lect10.html)              |
+| 16      | Hedging Interest Rate Risk                  | Apr 11, 2024   | [Slides](/assets/lectures/lect10/Lect10.html)              |
+| 17      | Hedging Interest Rate Risk                  | Apr 16, 2024   | [Slides](/assets/lectures/lect10/Lect10.html)              |
+| 18      | Bond Trading                                | Apr 18, 2024   | [Slides](/assets/lectures/lect11/Lect11.html)              |
+| 19      | Forwards                                    | Apr 23, 2024   | [Slides](/assets/lectures/lect12/Lect12.html)              |
 
 
 
