@@ -52,7 +52,7 @@
             },
             {
                 "name": "Assignment 09",
-                "notebook_path": "notebooks/Assignment09/Assignment_09.jl",
+                "notebook_path": "notebooks/Assignment09/Assignment_09_noSol.jl",
                 "video_id": "",
                 "preview_image_url": ""
             }
