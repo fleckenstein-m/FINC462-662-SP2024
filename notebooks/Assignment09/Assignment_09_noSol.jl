@@ -79,9 +79,6 @@ begin
 	display("")
 end
 
-# ╔═╡ 19b58a85-e443-4f5b-a93a-8d5684f9a17a
-TableOfContents(title="Assignment 8", indent=true, depth=2, aside=true)
-
 # ╔═╡ a5de5746-3df0-45b4-a62c-3daf36f015a5
 begin 
 	html"""
@@ -854,7 +851,6 @@ version = "17.4.0+2"
 """
 
 # ╔═╡ Cell order:
-# ╟─19b58a85-e443-4f5b-a93a-8d5684f9a17a
 # ╟─a5de5746-3df0-45b4-a62c-3daf36f015a5
 # ╟─3eeb383c-7e46-46c9-8786-ab924b475d45
 # ╟─9f9d1928-5806-46e9-8dab-2961da605826
