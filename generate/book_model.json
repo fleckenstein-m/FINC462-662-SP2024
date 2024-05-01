@@ -55,6 +55,12 @@
                 "notebook_path": "notebooks/Assignment09/Assignment_09_noSol.jl",
                 "video_id": "",
                 "preview_image_url": ""
+            },
+            {
+                "name": "Assignment 10",
+                "notebook_path": "notebooks/Assignment10/Assignment_10_noSol.jl",
+                "video_id": "",
+                "preview_image_url": ""
             }
         ]
     },
