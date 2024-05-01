@@ -205,6 +205,21 @@ begin
 	using Logging
 	global_logger(NullLogger());
 	display("")
+
+	#Sets the width of Pluto cells
+	#Note: put this last here.
+		html"""
+			<style>
+				main {
+					margin: 0 auto;
+					max-width: 1050px;
+			    	padding-left: max(80px, 5%);
+			    	padding-right: max(80px, 5%);
+				}
+			</style>
+		"""
+
+	
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
