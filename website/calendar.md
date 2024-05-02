@@ -22,7 +22,8 @@
 | 17      | Hedging Interest Rate Risk                  | Apr 16, 2024   | [Slides](/assets/lectures/lect10/Lect10.html)              |
 | 18      | Bond Trading                                | Apr 18, 2024   | [Slides](/assets/lectures/lect11/Lect11.html)              |
 | 19      | Forwards                                    | Apr 23, 2024   | [Slides](/assets/lectures/lect12/Lect12.html)              |
-
+| 20      | Interest Rate Swaps                         | Apr 30, 2024   | [Slides](/assets/lectures/lect13/Lect13.html)              |
+| 21      | Interest Rate Options                       | May 06, 2024   | [Slides](/assets/lectures/lect14/Lect14.html)              |
 
 
 
@@ -38,4 +39,6 @@
 | 5       | Assignment 5                               | Mar 19, 2024      | Assignment 05                                           |
 | 6       | Assignment 6                               | Apr 02, 2024      | Assignment 06                                           |
 | 7       | Assignment 7                               | Apr 09, 2024      | Assignment 07                                           |
-| 8       | Assignment 8                               | Apr 11, 2024      | Assignment 08                                           |
+| 8       | Assignment 8                               | Apr 16, 2024      | Assignment 08                                           |
+| 8       | Assignment 9                               | Apr 30, 2024      | Assignment 09                                           |
+| 8       | Assignment 10                              | May 07, 2024      | Assignment 10                                           |
