@@ -118,7 +118,8 @@ pages = [
 	(page = "/lect11/", title = "Lecture 11"),
 	(page = "/lect12/", title = "Lecture 12"),
 	(page = "/lect13/", title = "Lecture 13"),
-	(page = "/lect14/", title = "Lecture 14")
+	(page = "/lect14/", title = "Lecture 14"),
+	(page = "/lect15/", title = "Lecture 15"),
 ]
 
 # ╔═╡ c0768146-5ea0-4736-94f8-2c1a2affa922

@@ -24,6 +24,7 @@
 | 19      | Forwards                                    | Apr 23, 2024   | [Slides](/assets/lectures/lect12/Lect12.html)              |
 | 20      | Interest Rate Swaps                         | Apr 30, 2024   | [Slides](/assets/lectures/lect13/Lect13.html)              |
 | 21      | Interest Rate Options                       | May 06, 2024   | [Slides](/assets/lectures/lect14/Lect14.html)              |
+| 22      | TIPS-Treasury Puzzle                        | May 14, 2024   | [Slides](/assets/lectures/lect15/Lect15.html)              |
 
 
 
