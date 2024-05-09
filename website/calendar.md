@@ -42,3 +42,4 @@
 | 8       | Assignment 8                               | Apr 16, 2024      | Assignment 08                                           |
 | 8       | Assignment 9                               | Apr 30, 2024      | Assignment 09                                           |
 | 8       | Assignment 10                              | May 07, 2024      | Assignment 10                                           |
+| 8       | Assignment 11                              | May 14, 2024      | Assignment 11                                           |
