@@ -17,7 +17,7 @@ begin
 	<p style="padding-bottom:1cm"> </p>
 	<div align=center style="font-size:25px; font-family:family:Georgia"> FINC-462/662: Fixed Income Securities </div>
 	<p style="padding-bottom:1cm"> </p>
-	<p align=center style="font-size:25px; font-family:family:Georgia"> <b> Assignment 10
+	<p align=center style="font-size:25px; font-family:family:Georgia"> <b> Assignment 11
 	</b> <p>
 	<p style="padding-bottom:1cm"> </p>
 	<p align=center style="font-size:25px; font-family:family:Georgia"> Spring 2024 <p>
@@ -56,78 +56,37 @@ end
 # ╔═╡ e3b00f74-f253-4c2d-96ae-8e43d9c5d032
 vspace
 
-# ╔═╡ 0d2fa9e4-421c-4fe2-ba95-828bef51a94e
+# ╔═╡ 7ad75350-14a4-47ee-8c6b-6a2eac09ebb1
 md"""
 # Question 1
 """
 
-# ╔═╡ 57cd074a-c21d-44e4-bb38-14a19ad4ae8e
+# ╔═╡ c3f1cfaf-fcd4-4829-bcf9-7cadde289ec8
 md"""
-__1.1__ Suppose that it is January 2, 2008. Use the EURIBOR curve below. All interest rates are annual, but semi-annually compounded (and given as decimals, i.e. 0.0457 means 4.57%). You enter a 1-year fixed-for-floating interest rate swap with quarterly payments and a \$100mm notional. What is the fair one-year swap rate?
-
-| t     | 1/12   | 2/12   | 3/12  | 4/12  | 5/12 |  6/12 | 7/12  | 8/12   | 9/12  | 10/12  | 11/12   | 12/12  |
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----  |:-----|
-| r     | 0.0457  | 0.0464   | 0.0468  | 0.0465  | 0.0461 | 0.0457 | 0.045  | 0.0442   | 0.0435  | 0.0429  | 0.0424   | 0.0419  |
+Suppose you are given the interest rate tree shown below. The rates on the tree are semi-annually compounded rates. What is the value of a 1.5-year semi-annual coupon bond with coupon rate of 1.75% (annual rate, semi-annually  compounded).
 
 """
 
-# ╔═╡ 0d58533e-b618-4d40-9aa2-82affc393335
+# ╔═╡ 67a9e0f3-dcc0-4b4e-be05-b21fde16da13
+LocalResource("figures/ir_tree7.jpg", :width=>400)
+
+# ╔═╡ 6b52830b-fee5-479e-acb8-170be1e8b5de
 vspace
 
-# ╔═╡ 334c5066-48c5-467d-9c49-4c450a276cb6
-md"""
-__1.2__ What is the value of the interest rate swap at inception?"""
-
-# ╔═╡ 2ce4d1c1-9ba7-4ca1-af50-c3490d01daf8
-vspace
-
-# ╔═╡ 520998e4-c8c2-43bf-b109-41edf49d1fad
-md"""
-__1.3__ Suppose that it is now Feb 1, 2008. Use the LIBOR curve for that date given below. What is the value of the interest rate swap? 
-
-| t     | 1/12   | 2/12   | 3/12  | 4/12  | 5/12 |  6/12 | 7/12  | 8/12   | 9/12  | 10/12  | 11/12   | 12/12  |
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----  |:-----|
-| t     | 0.0314  | 0.0311   | 0.0310  | 0.0307  | 0.0305 | 0.0302 | 0.0297  | 0.0292   | 0.0288  | 0.0285  | 0.0283   | 0.0282  |
-
-- To do this, calculate the present value of the fixed and floating legs separately. Then determine the value of paying fixed and receiving floating.
-"""
-
-# ╔═╡ d9f49d24-d62f-446c-89ed-b0d85f59d7d0
-vspace
-
-# ╔═╡ ce159537-5bd7-4bee-8767-b5b9f95f2caa
+# ╔═╡ aa1a0dc5-5832-4571-bc60-1f7544b3050a
 md"""
 # Question 2
 """
 
-# ╔═╡ 094611b7-be02-4df0-9df6-e7deaa09b3b7
+# ╔═╡ 81afa859-1c87-4173-8f3a-9d1520b9d2f0
 md"""
-__2.1__ Suppose that you are given the following term structure of interest rates (zero-coupon yields). All interest rates are annual, but semi-annually compounded.
-What is the fair fixed rate in an interest rate swap where payments are made semi-annually?
-
-| t           | 0.5    | 1      | 1.5     | 2     | 2.5    | 3      |
-|:------------|:-------|:-------|:--------|:------|:-------|:-------|
-| Spot rate   | 0.02   | 0.025  | 0.03    | 0.03  | 0.035  | 0.04   |
-
+- Given the interest rate tree below, calculate the value of a 1.5-year interest rate cap with notional of $100 and strike rate of 4%. The rates on the tree are semi-annually compounded.
 """
 
-# ╔═╡ 5b82672f-7979-43f2-9fe8-7bb81069b2c5
-vspace
+# ╔═╡ ffe60db1-c1e1-4c9e-b122-538c02fd8d7f
+LocalResource("figures/appendix_ir_tree.jpg", :width=>500)
 
-# ╔═╡ 47c9fb2f-8109-4d47-bca2-fe9489ef6b28
-md"""
-__2.2__ Suppose that you enter into a floating-for-fixed interest rate swap at the rate determined in 3.1. The notional is 100. Suppose that just a few minutes after you enter into this contract, the whole term structure of interest rates increases by one percentage point. What is the value of your interest rate swap position?
-"""
-
-# ╔═╡ d83f5933-6b5c-4420-967d-c2d8559d320f
-vspace
-
-# ╔═╡ 84e77f5c-2581-4f49-9a98-87061bc03cce
-md"""
-__2.3__  Did you make or lose money? What is the intuition behind this?
-"""
-
-# ╔═╡ 70adf941-e0b0-46e0-b820-35efd6c01d15
+# ╔═╡ 644fd25d-e9bd-415c-bd6c-65ae494a4db8
 vspace
 
 # ╔═╡ d160a115-56ed-4598-998e-255b82ec37f9
@@ -205,21 +164,6 @@ begin
 	using Logging
 	global_logger(NullLogger());
 	display("")
-
-	#Sets the width of Pluto cells
-	#Note: put this last here.
-		html"""
-			<style>
-				main {
-					margin: 0 auto;
-					max-width: 1050px;
-			    	padding-left: max(80px, 5%);
-			    	padding-right: max(80px, 5%);
-				}
-			</style>
-		"""
-
-	
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -1291,20 +1235,14 @@ version = "1.4.1+0"
 # ╟─a5de5746-3df0-45b4-a62c-3daf36f015a5
 # ╟─3eeb383c-7e46-46c9-8786-ab924b475d45
 # ╟─e3b00f74-f253-4c2d-96ae-8e43d9c5d032
-# ╟─0d2fa9e4-421c-4fe2-ba95-828bef51a94e
-# ╟─57cd074a-c21d-44e4-bb38-14a19ad4ae8e
-# ╟─0d58533e-b618-4d40-9aa2-82affc393335
-# ╟─334c5066-48c5-467d-9c49-4c450a276cb6
-# ╟─2ce4d1c1-9ba7-4ca1-af50-c3490d01daf8
-# ╟─520998e4-c8c2-43bf-b109-41edf49d1fad
-# ╟─d9f49d24-d62f-446c-89ed-b0d85f59d7d0
-# ╟─ce159537-5bd7-4bee-8767-b5b9f95f2caa
-# ╟─094611b7-be02-4df0-9df6-e7deaa09b3b7
-# ╟─5b82672f-7979-43f2-9fe8-7bb81069b2c5
-# ╟─47c9fb2f-8109-4d47-bca2-fe9489ef6b28
-# ╟─d83f5933-6b5c-4420-967d-c2d8559d320f
-# ╟─84e77f5c-2581-4f49-9a98-87061bc03cce
-# ╟─70adf941-e0b0-46e0-b820-35efd6c01d15
+# ╟─7ad75350-14a4-47ee-8c6b-6a2eac09ebb1
+# ╟─c3f1cfaf-fcd4-4829-bcf9-7cadde289ec8
+# ╟─67a9e0f3-dcc0-4b4e-be05-b21fde16da13
+# ╟─6b52830b-fee5-479e-acb8-170be1e8b5de
+# ╟─aa1a0dc5-5832-4571-bc60-1f7544b3050a
+# ╟─81afa859-1c87-4173-8f3a-9d1520b9d2f0
+# ╟─ffe60db1-c1e1-4c9e-b122-538c02fd8d7f
+# ╟─644fd25d-e9bd-415c-bd6c-65ae494a4db8
 # ╟─d160a115-56ed-4598-998e-255b82ec37f9
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
