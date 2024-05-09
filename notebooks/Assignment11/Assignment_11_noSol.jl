@@ -144,8 +144,8 @@ Suppose you are given the interest rate tree shown below. The rates on the tree 
 
 """
 
-# ╔═╡ 67a9e0f3-dcc0-4b4e-be05-b21fde16da13
-LocalResource("figures/ir_tree7.jpg", :width=>400)
+# ╔═╡ ea9de976-ff4d-45d1-b111-fc52ba27f9fa
+Resource("https://imgur.com/gOd8mF1.jpg", :width=>400)
 
 # ╔═╡ 6b52830b-fee5-479e-acb8-170be1e8b5de
 vspace
@@ -160,8 +160,8 @@ md"""
 - Given the interest rate tree below, calculate the value of a 1.5-year interest rate cap with notional of $100 and strike rate of 4%. The rates on the tree are semi-annually compounded.
 """
 
-# ╔═╡ ffe60db1-c1e1-4c9e-b122-538c02fd8d7f
-LocalResource("figures/appendix_ir_tree.jpg", :width=>500)
+# ╔═╡ e7f659dd-d4f5-41e2-8906-d776266958e5
+Resource("https://imgur.com/rLqC3WI.jpg",:width=>500)
 
 # ╔═╡ 644fd25d-e9bd-415c-bd6c-65ae494a4db8
 vspace
@@ -1236,11 +1236,11 @@ version = "1.4.1+0"
 # ╟─e3b00f74-f253-4c2d-96ae-8e43d9c5d032
 # ╟─7ad75350-14a4-47ee-8c6b-6a2eac09ebb1
 # ╟─c3f1cfaf-fcd4-4829-bcf9-7cadde289ec8
-# ╟─67a9e0f3-dcc0-4b4e-be05-b21fde16da13
+# ╟─ea9de976-ff4d-45d1-b111-fc52ba27f9fa
 # ╟─6b52830b-fee5-479e-acb8-170be1e8b5de
 # ╟─aa1a0dc5-5832-4571-bc60-1f7544b3050a
 # ╟─81afa859-1c87-4173-8f3a-9d1520b9d2f0
-# ╟─ffe60db1-c1e1-4c9e-b122-538c02fd8d7f
+# ╟─e7f659dd-d4f5-41e2-8906-d776266958e5
 # ╟─644fd25d-e9bd-415c-bd6c-65ae494a4db8
 # ╟─d160a115-56ed-4598-998e-255b82ec37f9
 # ╟─00000000-0000-0000-0000-000000000001
