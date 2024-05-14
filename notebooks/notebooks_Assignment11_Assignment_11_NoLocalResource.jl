@@ -67,10 +67,58 @@ Suppose you are given the interest rate tree shown below. The rates on the tree 
 
 """
 
-# ╔═╡ ea9de976-ff4d-45d1-b111-fc52ba27f9fa
+# ╔═╡ d9488d97-159b-4853-844b-45cbc1541f4a
 Resource("https://imgur.com/gOd8mF1.jpg", :width=>400)
 
 # ╔═╡ 6b52830b-fee5-479e-acb8-170be1e8b5de
+vspace
+
+# ╔═╡ dd9eabe7-b03a-4e72-a6de-955fa5489edb
+md"""
+**Solution**
+"""
+
+# ╔═╡ 2d2d1cf8-0854-43c3-a436-00152fe3d3b9
+md"""
+- The coupon cash flow is $C=100\times \frac{1.75\%}{2}=0.875$
+- The ex-coupon tree for the bond price is
+"""
+
+# ╔═╡ c2b91f68-0d9a-4a03-93e0-a7ace9b32c55
+md"""
+- The bond prices at $t=1$ are
+
+$$P_{2,0} = \frac{(0.5\times 100 + 0.5 \times 100) + 0.875}{1 + \frac{0.06153}{2}} = 97.8642$$
+
+$$P_{2,1} = \frac{0.5\times 100 + 0.5\times 100 + 0.875}{1+\frac{.03643}{2}} = 99.0704$$
+
+$$P_{2,2} = \frac{0.5\times 100 + 0.5\times 100 + 0.875}{1+\frac{.011734}{2}} = 100.2866$$
+
+"""
+
+# ╔═╡ 59b222fa-e2a4-45df-85cf-f8a5491c8566
+md"""
+- The bond prices at $t=0.5$ are
+
+$$P_{1,0} = \frac{(0.5\times 97.8642 + 0.5\times 99.0704) + 0.875}{1+\frac{0.03785}{2}} = 97.4971$$
+
+$$P_{1,1} = \frac{(0.5\times 99.0704 + 0.5\times 100.2866) + 0.875}{1+\frac{0.01304}{2}} = 99.9021$$
+
+"""
+
+# ╔═╡ 6dd228de-d064-42a8-b800-6b302929e280
+md"""
+- Bond Price Tree 
+"""
+
+# ╔═╡ faaf2681-a037-428b-a5e2-a5425902c8f2
+md"""
+- The bond price today ($t=0$) is 
+
+$$P_{0,0} = \frac{(0.5\times 97.4971 + 0.5\times 99.9021) + 0.875}{(1+\frac{0.01748}{2})^{2\times 0.5}} = 98.71$$
+"""
+
+# ╔═╡ d3c38d64-1fc4-49f4-a611-415f8727eb04
 vspace
 
 # ╔═╡ aa1a0dc5-5832-4571-bc60-1f7544b3050a
@@ -83,10 +131,56 @@ md"""
 - Given the interest rate tree below, calculate the value of a 1.5-year interest rate cap with notional of $100 and strike rate of 4%. The rates on the tree are semi-annually compounded.
 """
 
-# ╔═╡ e7f659dd-d4f5-41e2-8906-d776266958e5
+# ╔═╡ 3f3fb616-6823-4836-b169-fa2d6faa51e6
 Resource("https://imgur.com/rLqC3WI.jpg",:width=>500)
 
 # ╔═╡ 644fd25d-e9bd-415c-bd6c-65ae494a4db8
+vspace
+
+# ╔═╡ f2160999-47f9-4e3c-b71d-351329c77650
+md"""
+**Solution**
+"""
+
+# ╔═╡ 90617312-b96f-4900-b7d3-9fa45dfdd41d
+md"""
+**Caplet expiring at $t=0.5$**
+
+The caplet expiring at $t=0.5$ has zero payoff.
+
+**Caplet expiring at $t=1$**
+
+- The payoff of the caplet expiring at $t=1$ has payoff in the upper node of $(0.0416 - 0.04) \times 100 \times 0.5 = 0.08$. In the lower node, the payoff is zero.
+- The value at $t=0.5$ is
+
+$$\frac{0.08}{(1+\frac{0.0416}{2})^{2\times 0.5}}=0.0784$$
+
+- The value at $t=0$ is
+
+$$\frac{0.5 \times 0.0784 + 0.5 \times 0}{(1+\frac{0.0202}{2})^{2\times 0.5}} = 0.0388$$
+
+**Caplet expiring at $t=1.5$**
+
+- The payoff of the caplet expiring at $t=1.5$ has payoff in the upper node of $(0.053 - 0.04) \times 100 \times 0.5 = 0.65$. In the middle and lower nodes, the payoff is zero.
+- The value at $t=1.0$ is
+
+$$\frac{0.65}{(1+\frac{0.0530}{2})^{2\times 0.5})}=0.6332$$
+
+- The value at $t=0.5$ is
+
+$$\frac{0.5\times 0.6332}{(1+\frac{0.0416}{2})^{2\times 0.5})}=0.3102$$
+
+- The value at $t=0$ is
+
+$$\frac{0.5\times 0.3102}{(1+\frac{0.0202}{2})^{2\times 0.5})}=0.1535$$
+
+Thus, the value of the caplet is
+
+$$0.0388 + 0.1535 = 0.1923$$
+
+"""
+
+# ╔═╡ 30ba6831-b089-4f58-9347-85628964b3b7
 vspace
 
 # ╔═╡ d160a115-56ed-4598-998e-255b82ec37f9
@@ -1237,12 +1331,22 @@ version = "1.4.1+0"
 # ╟─e3b00f74-f253-4c2d-96ae-8e43d9c5d032
 # ╟─7ad75350-14a4-47ee-8c6b-6a2eac09ebb1
 # ╟─c3f1cfaf-fcd4-4829-bcf9-7cadde289ec8
-# ╟─ea9de976-ff4d-45d1-b111-fc52ba27f9fa
+# ╟─d9488d97-159b-4853-844b-45cbc1541f4a
 # ╟─6b52830b-fee5-479e-acb8-170be1e8b5de
+# ╟─dd9eabe7-b03a-4e72-a6de-955fa5489edb
+# ╟─2d2d1cf8-0854-43c3-a436-00152fe3d3b9
+# ╟─c2b91f68-0d9a-4a03-93e0-a7ace9b32c55
+# ╟─59b222fa-e2a4-45df-85cf-f8a5491c8566
+# ╟─6dd228de-d064-42a8-b800-6b302929e280
+# ╟─faaf2681-a037-428b-a5e2-a5425902c8f2
+# ╟─d3c38d64-1fc4-49f4-a611-415f8727eb04
 # ╟─aa1a0dc5-5832-4571-bc60-1f7544b3050a
 # ╟─81afa859-1c87-4173-8f3a-9d1520b9d2f0
-# ╟─e7f659dd-d4f5-41e2-8906-d776266958e5
+# ╟─3f3fb616-6823-4836-b169-fa2d6faa51e6
 # ╟─644fd25d-e9bd-415c-bd6c-65ae494a4db8
+# ╟─f2160999-47f9-4e3c-b71d-351329c77650
+# ╟─90617312-b96f-4900-b7d3-9fa45dfdd41d
+# ╟─30ba6831-b089-4f58-9347-85628964b3b7
 # ╟─d160a115-56ed-4598-998e-255b82ec37f9
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
